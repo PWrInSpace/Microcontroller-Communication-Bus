@@ -105,8 +105,8 @@ int main(void)
   MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
 
-	HAL_ADC_Start_DMA(&hadc1, (uint32_t*) &adcReading, 1);
-	HAL_I2C_EnableListen_IT(&hi2c2);
+	HAL_ADC_Start_DMA(&hadc1, (uint32_t*) &adcReading, 1); // Start ADC with DMA on channel set in Cube.
+	HAL_I2C_EnableListen_IT(&hi2c2); // Start listening for I2C master call.
 
 	uint32_t ledTimer = uwTick;
 
