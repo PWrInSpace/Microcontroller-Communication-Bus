@@ -29,28 +29,28 @@ void loop() {
 
     switch (ledProgramm) {
 
-		case 1:
-			digitalWrite(LED_Pin, 1);
-			break;
+    case 1:
+        digitalWrite(LED_Pin, 1);
+        break;
 
-		case 2:
-			digitalWrite(LED_Pin, 0);
-			break;
+    case 2:
+        digitalWrite(LED_Pin, 0);
+        break;
 
-		case 123:
+    case 123:
 
-			if (millis() - ledTimer > 1000) {
+        if (millis() - ledTimer > 1000) {
 
-				ledTimer = millis();
-				digitalWrite(LED_Pin, !digitalRead(LED_Pin));
-			}
-			break;
-		}
+            ledTimer = millis();
+            digitalWrite(LED_Pin, !digitalRead(LED_Pin));
+        }
+        break;
+    }
 
-		txStruct.ledState = digitalRead(LED_Pin);
-		txStruct.lastDoneCommandNum = ledProgramm;
-		txStruct.adcValue = analogRead(33);
-		txStruct.adcVoltage = (txStruct.adcValue * 3.3) / 4095;
+    txStruct.ledState = digitalRead(LED_Pin);
+    txStruct.lastDoneCommandNum = ledProgramm;
+    txStruct.adcValue = analogRead(33);
+    txStruct.adcVoltage = (txStruct.adcValue * 3.3) / 4095;
 }
 
 void i2cTxInterrupt() {
