@@ -13,4 +13,7 @@ struct StructToTransmit {
     int16_t adcValue;
 };
 
+void i2cTxInterrupt();
+void i2cRxInterrupt(int howMany);
+
 #endif
