@@ -10,7 +10,7 @@ const uint16_t slaveAddress = 26; // Addres of the slave device - set in the sla
 
 void setup() {
 
-    Wire.begin(21, 22, 400000); // Initializes I2C_0 as a Master. If you want to use I2C_1 -> go with Wire1 instead of Wire.
+    Wire.begin(21, 22, 100000); // Initializes I2C_0 as a Master. If you want to use I2C_1 -> go with Wire1 instead of Wire.
     Wire.setTimeOut(TIMEOUT); // Default timeout is 1000ms - really really long.
 
     Serial.begin(115200); // Serial port to send received data to PC and send commands gotten from pc to the slave(s).
